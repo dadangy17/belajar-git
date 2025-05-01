@@ -1,0 +1,22 @@
+path = C:\Users\UsEr\hobby
+
+sudo pacman -Syu
+sudo ln -s /etc/runit/sv/sshd /run/runit/service
+
+----------------------------------
+install yay
+https://www.makeuseof.com/install-and-use-yay-arch-linux/
+
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+----------------
+install PAMAC
+https://itsfoss.com/install-pamac-arch-linux/
+yay -S pamac-aur
+
+---------------
+sudo ln -s /etc/runit/sv/zramen /run/runit/service
+

@@ -1,0 +1,55 @@
+path = /home/yuliantod/Downloads/all_catat/belajar_golang/
+
+
+https://dasarpemrogramangolang.novalagung.com/1-berkenalan-dengan-golang.html
+
+git clone https://github.com/novalagung/dasarpemrogramangolang-example
+
+
+cd /home/yuliantod/Downloads/all_catat/belajar_golang/
+mkdir hello-world
+cd hello-world
+go mod init hello-world
+
+go build
+
+go run main.go
+
+---------------
+PS C:\Users\UsEr> winget search golang
+Name                    Id                          Version  Match       Source
+-------------------------------------------------------------------------------
+yq                      MikeFarah.yq                4.33.3   Tag: golang winget
+Keybase                 Keybase.Keybase             6.1.0.4  Tag: golang winget
+GoLand                  JetBrains.GoLand            2022.3.2 Tag: golang winget
+GLab                    GLab.GLab                   1.30.0   Tag: golang winget
+Git LFS                 GitHub.GitLFS               3.3.0    Tag: golang winget
+butane                  Fedora.CoreOS.butane        0.18.0   Tag: golang winget
+Compose Generator       ChilliBits.ComposeGenerator 1.9.0    Tag: golang winget
+kubectx                 ahmetb.kubectx              0.9.4    Tag: golang winget
+dive                    wagoodman.dive              0.10.0   Tag: golang winget
+CloudflareSpeedTest     XIU2.CloudflareSpeedTest    2.2.3    Tag: golang winget
+Secrets OPerationS      Mozilla.SOPS                3.7.3    Tag: golang winget
+kubens                  ahmetb.kubens               0.9.4    Tag: golang winget
+icnsify                 JackMordaunt.icnsify        2.2.6    Tag: golang winget
+Mage                    Magefile.mage               1.15.0   Tag: golang winget
+kontext                 orbatschow.kontext          1.6.0    Tag: golang winget
+Go Programming Language GoLang.Go                   1.20.5   Tag: golang winget
+Soft Serve              charmbracelet.soft-serve    v0.5.4   Tag: golang winget
+Picocrypt               EvanSu.Picocrypt            1.32     Tag: golang winget
+golangci-lint           GolangCI.golangci-lint      1.53.2               winget
+---------------
+PS C:\Users\UsEr> winget search vscode
+Name                                  Id                                  Version      Match                    Source
+----------------------------------------------------------------------------------------------------------------------
+Microsoft Visual Studio Code          Microsoft.VisualStudioCode          1.79.2       Moniker: vscode          winget
+MrCode                                zokugun.MrCode                      1.77.0.23092 Tag: vscode              winget
+VSCodium Insiders                     VSCodium.VSCodium.Insiders          1.80.0.23165 Tag: vscode              winget
+VSCodium                              VSCodium.VSCodium                   1.79.2.23166 Tag: vscode              winget
+Huawei Quick App IDE                  Huawei.QuickAppIde                  11.4.2       Tag: vscode              winget
+TheiaBlueprint                        EclipseFoundation.TheiaBlueprint    1.32.0       Tag: vscode              winget
+Upgit                                 pluveto.Upgit                       0.2.18       Tag: vscode              winget
+Microsoft Visual Studio Code Insiders Microsoft.VisualStudioCode.Insiders 1.80.0       Moniker: vscode-insiders winget
+-------------
+
+

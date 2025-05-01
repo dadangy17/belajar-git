@@ -1,0 +1,15 @@
+path = D:\dadang\hobby
+
+https://software.endy.muhardin.com/
+https://software.endy.muhardin.com/flutter/persiapan-coding-flutter/
+https://software.endy.muhardin.com/java/switch-user-spring-security/
+https://software.endy.muhardin.com/programming/masih-database-transaction-lagi/
+https://software.endy.muhardin.com/java/database-transaction/
+https://software.endy.muhardin.com/java/instalasi-jenkins-ssl/
+https://software.endy.muhardin.com/java/membuat-datasource-postgresql-di-wildfly/
+
+
+https://www.youtube.com/channel/UC3oNtvY3sETKZU7wEQyePQQ --> artivisi 
+
+https://www.youtube.com/playlist?list=PL9oC_cq7OYbwhs_x2S_Vv9VFRKnoXs8hn --> version control
+

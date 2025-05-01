@@ -1,0 +1,15 @@
+path = C:\Users\UsEr\hobby\voidlinux
+
+https://jagotekno.com/cara-install-void-linux/
+
+https://voidlinux.org/download/
+
+
+https://gist.github.com/bastomiadi/abf27618341fc561735adfb17e586916
+
+post-installation-void-linux-glibc.txt
+
+
+https://gist.github.com/bastomiadi/b622ea1c90090998f31aa76ec5d1d433
+
+https://gist.github.com/bastomiadi/b622ea1c90090998f31aa76ec5d1d433#how-to-install-lamp-in-void-linux
