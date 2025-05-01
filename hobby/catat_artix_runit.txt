@@ -1,6 +1,23 @@
-path = C:\Users\UsEr\hobby
+path = C:\Users\UsEr\project\belajar-git\hobby
+path vms (virtualbox machine server) = C:\Users\UsEr\VirtualBox VMs\voidlinux\artix_runit.vdi
 
-sudo pacman -Syu
+https://wiki.artixlinux.org/Main/Runit
+
+sudo sv stop zramen
+
+--------------------
+ping 192.168.100.12
+ssh-keygen -R 192.168.100.12
+ssh yuliantod@192.168.100.12
+ssh -l yuliantod 192.168.100.12
+The authenticity of host '192.168.100.12 (192.168.100.12)' can't be established.
+ED25519 key fingerprint is SHA256:DFXPVxfWWWrd0k53yQICGgPx8iwQmBDPvM2mKE+f5tU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.100.12' (ED25519) to the list of known hosts.
+--------------
+sudo pacman -Sy
+sudo pacman -Syu ##(Update semua)
 sudo ln -s /etc/runit/sv/sshd /run/runit/service
 
 ----------------------------------
@@ -11,12 +28,43 @@ sudo pacman -S --needed base-devel git
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+----------
+sudo ls -la /etc/runit/runsvdir/default
+sudo ln -s /etc/runit/sv/zramen /run/runit/service
+unlink /run/runit/service/service_name
+unlink /run/runit/service/zramen
 
+zramen toss ## shutdown
+modprobe zram num_devices=1
+echo 8767168512 > /sys/block/zram0/disksize
+zramen -s 49 make
+zramctl /dev/zram0 --output-all
+NAME       DISKSIZE DATA COMPR ALGORITHM STREAMS ZERO-PAGES TOTAL MEM-LIMIT MEM-USED MIGRATED COMP-RATIO MOUNTPOINT
+/dev/zram0     1,4G   4K   69B lz4             1          0   20K        0B      20K       0B     0,2000 [SWAP]
+https://forum.manjaro.org/t/howto-install-and-configure-zram-using-zram-generator/168610
+konsole (multitab)qt6-svg
 ----------------
+
+[sudo] password for yuliantod:
+:: Synchronizing package databases...
+ system is up to date
+ world is up to date
+ galaxy is up to date
+:: Searching AUR for updates...
+:: Searching databases for updates...
+ -> ignoring package replacement (libva-mesa-driver-1:23.3.1-1 => mesa-1:25.0.4-1)
+ -> mesa: ignoring package upgrade (1:23.3.1-1 => 1:25.0.4-1)
+ -> ignoring package replacement (mesa-vdpau-1:23.3.1-1 => mesa-1:25.0.4-1)
+ -> nvidia: ignoring package upgrade (545.29.06-6 => 570.144-2)
+ -> nvidia-utils: ignoring package upgrade (545.29.06-1 => 570.144-3)
+ -> pacman: ignoring package upgrade (6.1.0-3 => 7.0.0.r6.gc685ae6-2)
+ -> Packages not in AUR: libvdpau-va-gl
+ there is nothing to do
+
 install PAMAC
 https://itsfoss.com/install-pamac-arch-linux/
 yay -S pamac-aur
 
 ---------------
-sudo ln -s /etc/runit/sv/zramen /run/runit/service
+
 
