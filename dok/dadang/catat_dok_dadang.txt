@@ -1,0 +1,5 @@
+path = C:\Users\UsEr\project\belajar-git\dok\dadang
+
+path old reff = C:\Users\UsEr\dok\dadang
+
+Folder Dokumen Dadang di Laptop HP bata

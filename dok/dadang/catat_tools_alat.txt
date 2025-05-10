@@ -1,0 +1,32 @@
+path = C:\Users\UsEr\project\belajar-git\dok\dadang
+
+windows 10
+1. CyberLink_YouCam_Downloader.exe untuk camera laptop hp bata
+2. winget = Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+  2a. wingetui
+3. https://scoop.sh/ (https://www.bersosial.com/threads/scoop-sh-software-installer-untuk-windows.59110/)
+  PS C:\Users\UsEr> scoop list
+Installed apps:
+
+Name             Version     Source Updated             Info
+----             -------     ------ -------             ----
+7zip             23.01       main   2023-12-02 22:36:43
+battery-care     0.9.36      extras 2023-12-02 22:55:56
+git              2.43.0      main   2023-12-02 22:38:10
+quickcpu         4.8.0.0     extras 2023-12-08 00:23:39
+windows-terminal 1.18.3181.0 extras 2023-12-02 22:40:24
+
+
+PS C:\Users\UsEr>
+---------------- 
+4. QTTabBar_1043.zip (explorer multi bar)
+5. "C:\Program Files (x86)\IObit\Driver Booster\11.1.0\DriverBooster.exe"
+6. "C:\Program Files (x86)\IObit\Software Updater\SoftwareUpdater.exe"
+7. "C:\Program Files (x86)\IObit\Advanced SystemCare\ASC.exe" /manual
+8. "C:\Program Files (x86)\IObit\IObit Uninstaller\IObitUninstaler.exe"
+9. "C:\Program Files\Oracle\VirtualBox\VirtualBox.exe"
+10. https://www.bersosial.com/threads/4-aplikasi-text-editor-terbaik-untuk-anda-yang-sedang-belajar-pemrogramer.43454/
+11. https://snapsave.app/id (https://snapinsta.app/)
+12. https://eraspace.com/artikel/post/laptop-biasa-rasa-macbook-5-cara-mengubah-tampilan-windows-10-mirip-dengan-macos
+ https://www.youtube.com/watch?v=-TDtOKn43Vc
+

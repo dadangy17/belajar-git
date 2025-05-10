@@ -1,0 +1,13 @@
+path = C:\Users\UsEr\dok
+
+https://scoop.sh/
+
+PS C:\Users\UsEr> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS C:\Users\UsEr> irm get.scoop.sh | iex
+
+https://github.com/ScoopInstaller/scoop/wiki/Uninstalling-Scoop
+
+Broken Install
+If you delete ~/scoop you should be able to reinstall. To do this, run this in powershell:
+
+del .\scoop -Force

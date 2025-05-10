@@ -1,0 +1,13 @@
+path = C:\Users\UsEr\dok\dadang
+
+https://www.youtube.com/watch?v=xyzhWDMelrA
+
+PS C:\Windows\system32> Get-AppxPackage  |C:\Users\UsEr\grep.exe Help
+
+Remove-AppxPackage -Package Microsoft.GetHelp_10.2403.20861.0_x64__8wekyb3d8bbwe
+
+https://github.com/hellzerg/optimizer/releases
+
+iwr -useb https://christitus.com/win | iex
+
+https://www.youtube.com/watch?v=TMajwFzvnMs

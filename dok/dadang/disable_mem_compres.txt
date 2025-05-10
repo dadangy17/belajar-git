@@ -1,0 +1,7 @@
+path = C:\Users\UsEr\dok
+
+https://www.elevenforum.com/t/enable-or-disable-memory-compression-in-windows-10-and-windows-11.3555/
+
+get-MMagent
+
+disable-MMAgent -mc

@@ -1,0 +1,19 @@
+path = C:\Users\UsEr\dok\dadang
+
+https://www.youtube.com/watch?v=n2m7Zv68zvI
+
+https://www.petanikode.com/docker-install/
+
+https://medium.com/netshoot/tutorial-docker-bahasa-indonesia-3-instalasi-docker-di-windows-10-dan-linux-423b4936e085
+
+PS C:\Users\UsEr> where.exe docker
+C:\Program Files\Docker\Docker\resources\bin\docker
+C:\Program Files\Docker\Docker\resources\bin\docker.exe
+-----------
+docker run hello-world
+docker run -it ubuntu bash
+-----------
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+apt-get install neofetch
