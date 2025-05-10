@@ -14,5 +14,7 @@ folder =
 cara kerja
 1. git gui > stage change
   > commit
-2. github desktop --> https://github.com/dadangy17/belajar-git
+2. github desktop --> https://github.com/dadangy17/belajar-git --> push origin
+
+
 
