@@ -1,0 +1,70 @@
+path = C:\Users\UsEr\project\belajar-git\wsl\wsl_arch_linux
+
+vbox = C:\Users\UsEr\VirtualBox VMs\arconet
+
+https://www.youtube.com/watch?v=_NMQ_-77JRM&t=11s
+
+Arco Final : 4468 Farewell to ArcoLinux and all its projects and farewell to a community
+
+https://www.arcolinux.info/a-farewell-to-the-arcolinux-university/
+
+https://www.youtube.com/watch?v=1UqIu3RLoyw
+
+How to Install COSMIC Desktop in Arch Linux
+
+To begin an update of all installed packages, open any terminal emulator and pass the following command:
+
+sudo pacman -Syu
+
+
+Install yay AUR Helper in Arch Linux 
+
+
+Open a terminal and run the bellow commands. Provide admin password when prompted. These steps require the base-devel package and git package for compilation and installation.
+
+sudo pacman -S base-devel
+
+sudo pacman -S git
+
+
+cd /opt
+sudo git clone https://aur.archlinux.org/yay.git
+
+Change the owner of the source directory. Replace “freebooter” with your user name.
+
+sudo chown -R freebooter:users ./yay
+
+
+Go to the directory and compile.
+
+cd yay
+
+makepkg -si
+
+
+This completes the installation for yay in Arch Linux.
+
+Open a terminal and install cosmic desktop packages using the below command using Yay AUR helper. You can use any other AUR helper to this as well.
+
+yay -S cosmic
+
+If the above command doesn’t work, try to install it from Extra repo.
+
+sudo pacman -S cosmic
+
+
+To fix App Center, install packagekit in Arch Linux using the below command and then re-launch App Center.
+
+sudo pacman -S packagekit
+
+
+In the Settings, if you see no option under “Power and Battery”, you need to install “power-profiles-daemon”. Use the following command to install in Arch Linux.
+
+sudo pacman -S power-profiles-daemon
+
+Using these basic configurations, you can set up your COSMIC desktop in Arch Linux, which closely resembles the Pop OS version.
+
+
+Reboot system.
+
+Sudo reboot

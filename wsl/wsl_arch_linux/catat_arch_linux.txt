@@ -1,0 +1,119 @@
+path = D:\dadang\hobby\arch_linux
+
+https://www.youtube.com/watch?v=h0Wg_aknGdc
+https://nanxiao.me/en/update-keyring-first-if-your-arch-linux-is-old-enough/
+sudo pacman -S archlinux-keyring
+sudo systemctl status sshd
+sudo systemctl start sshd
+sudo systemctl enable sshd
+----
+https://www.addictivetips.com/ubuntu-linux-tips/re-install-grub-on-arch-linux/
+sudo lsblk
+sudo fdisk -l
+
+Grub re-install Non-UEFI
+grub-install --recheck --target=i386-pc /dev/sda
+
+grub-mkconfig -o /boot/grub/grub.cfg
+--------------------------
+
+
+https://beebom.com/how-install-google-play-store-windows-11/ 
+https://wiki.archlinux.org/title/NetworkManager
+List nearby Wi-Fi networks:
+
+$ nmcli device wifi list
+Connect to a Wi-Fi network:
+
+$ nmcli device wifi connect SSID_or_BSSID password password
+----------------
+sesat - https://ngonoo.com/2017/04/145251/cara-paling-mudah-menginstall-arch-linux-dengan-gui/
+https://ngonoo.com/2017/04/210801/cara-membuat-installer-linux-dengan-etcher/
+https://www.balena.io/etcher/
+https://www.linuxsec.org/2018/02/install-arch-with-zeninstaller.html
+https://archlinuxgui.in/download.html#xfce
+
+
+-----------------
+wsl
+
+sudo apt update && sudo apt upgrade
+-------------
+virtual box = https://www.nesabamedia.com/cara-install-arch-linux-di-virtualbox/
+
+https://jagotekno.com/cara-install-cutefish-desktop-environtment/
+https://jagongoding.com/linux/arch-linux/mencari-mirror-server-tercepat/
+----------------------------------------
+https://jagongoding.com/linux/arch-linux/cara-upgrade-aplikasi-dengan-pacman/
+
+Dan cara untuk mengupdate database pacman kita adalah sebagai berikut:
+
+pacman -Sy
+Upgrade Semua Aplikasi
+Untuk meng-upgrade semua paket [yang ada versi barunya] kita bisa melakukannya dengan perintah ini:
+
+pacman -Su
+Atau jika anda ingin mengupgrade paket sekaligus dengan update databasenya lebih dulu, anda tinggal tambahkan flag y seperti ini:
+
+pacman -Syu
+Upgrade Satu Aplikasi Saja (atau lebih)
+Untuk melakukan upgrade hanya untuk satu aplikasi, perintah yang kita gunakan sama dengan perintah ketika kita menginstall paket pada umumnya, yaitu: pacman -S <nama-paket>.
+
+Misal:
+
+pacman -S firefox
+Atau jika anda ingin menguprade lebih dari satu aplikasi, anda tinggal menyebutkan nama aplikasi-aplikasinya dengan memisahkannya menggunakan spasi.
+
+pacman -S firefox chromium vlc
+**NB: ** Jika aplikasi sudah dalam versi terbaru, perintah di atas akan melakukan proses reinstalling.
+
+Lihat Paket yang Butuh Diupdate
+Okay, mungkin yang menjadi pertanyaan adalah; bagaimana caranya kita tahu paket apa saja yang butuh diupdate? Atau paket-paket aplikasi apa saja yang sudah muncul versi terbarunya? Tenang. Untuk mengetahui hal ini, caranya cukup mudah. Anda bisa melakukannya dengan perintah: pacman -Qu.
+
+pacman -Qu
+Perintah di atas akan menampilkan semua list aplikasi yang sudah ada versi terbarunya + ditampilkan juga versi lamanya versi berapa. Contoh output dari arch linux saya:
+
+alsa-lib 1.1.4.1-1 -> 1.1.4.1-2
+apache 2.4.27-2 -> 2.4.29-1
+apm 1.18.5-1 -> 1.18.10-1
+appstream 0.11.5-2 -> 0.11.7-1
+appstream-glib 0.6.13-1 -> 0.7.2-1
+appstream-qt 0.11.5-2 -> 0.11.7-1
+apr 1.6.2-1 -> 1.6.3-1
+apr-util 1.6.0-1 -> 1.6.1-1
+archlinux-keyring 20170823-1 -> 20171020-1
+at-spi2-atk 2.24.1-1 -> 2.26.0-2
+at-spi2-core 2.24.1-1 -> 2.26.0+4+g7070583-1
+atk 2.24.0-2 -> 2.26.1-1
+atom 1.20.1-1 -> 1.21.1-1
+attica-qt5 5.38.0-1 -> 5.39.0-1
+autoconf-archive 1:2017.03.21-1 -> 1:2017.09.28-1
+baloo 5.38.0-1 -> 5.39.0-1
+bamf 0.5.3-1 -> 0.5.3-2
+binutils 2.29.0-1 -> 2.29.1-1
+...
+Anda bisa menggunakan grep untuk mencari paket dengan keyword tertentu. Misal saya akan mencari paket-paket yang ada kata python-nya, saya bisa melakukannya dengan perintah berikut:
+
+pacman -Qu | grep python
+
+
+https://jagongoding.com/linux/perbedaan-antara-suspend-dan-hibernate/
+https://bandithijo.github.io/blog/mengkonfigurasi-fitur-hibernasi-pada-arch-linux
+
+
+sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu
+---------------
+wsl
+https://gist.github.com/ld100/3376435a4bb62ca0906b0cff9de4f94b
+https://github.com/yuk7/ArchWSL/releases/tag/22.2.10.0
+https://github.com/yuk7/ArchWSL/releases
+https://github.com/yuk7/ArchWSL/releases/tag/22.10.16.0
+https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/#initialize-keyring
+
+https://gist.github.com/ld100/3376435a4bb62ca0906b0cff9de4f94b
+pacman -Qqm
+pacman -S --needed base-devel
+https://archlinux.org/groups/
+--------------------
+archo linux = minta 914 Mb update
+arch linux = minta 893 Mb update

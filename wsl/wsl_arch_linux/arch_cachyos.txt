@@ -1,0 +1,5 @@
+path = C:\Users\UsEr\project\belajar-git\wsl\wsl_arch_linux
+
+https://www.youtube.com/watch?v=YH8qJbP_gZM&t=478s
+
+CachyOS Linux : Arch Linux dengan Performa Ngebut | Linux untuk Gaming | Adi Setiawan Linux

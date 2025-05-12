@@ -1,0 +1,20 @@
+path = E:\dadang\vhd_virtual_box
+path ref = E:\dadang\source\virtual_box
+
+path ref = C:\Users\Dadang Yulianto\VirtualBox VMs\nixos
+
+shrink vhd
+https://learn.microsoft.com/en-us/powershell/module/hyper-v/resize-vhd?view=windowsserver2022-ps
+
+Resize-VirtualDisk -Path "C:\Users\Dadang Yulianto\VirtualBox VMs\arco_zend linux\zend linux.vhd" -ToMinimumSize
+-----------------------
+From an elevated command prompt type:
+
+diskpart
+--select vdisk file=”C:\Hyper-V\sampledrive.vhdx”
+select vdisk file="C:\Users\Dadang Yulianto\VirtualBox VMs\arco_zend linux\zend linux.vhd"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+exit
+

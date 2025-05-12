@@ -1,0 +1,74 @@
+Windows Subsystem for Linux is now available in the Microsoft Store!
+You can upgrade by running 'wsl.exe --update' or by visiting https://aka.ms/wslstorepage
+Installing WSL from the Microsoft Store will give you the latest WSL updates, faster.
+For more information please visit https://aka.ms/wslstoreinfo
+
+[yuliantod@LAPTOP-C0KNSPIJ ~]$ uname -a
+Linux LAPTOP-C0KNSPIJ 5.10.60.1-microsoft-standard-WSL2 #1 SMP Wed Aug 25 23:20:18 UTC 2021 x86_64 GNU/Linux
+[yuliantod@LAPTOP-C0KNSPIJ ~]$ neofetch
+                   -`                    yuliantod@LAPTOP-C0KNSPIJ
+                  .o+`                   -------------------------
+                 `ooo/                   OS: Arch Linux on Windows 10 x86_64
+                `+oooo:                  Kernel: 5.10.60.1-microsoft-standard-WSL2
+               `+oooooo:                 Uptime: 1 min
+               -+oooooo+:                Packages: 169 (pacman)
+             `/:-:++oooo+:               Shell: bash 5.1.16
+            `/++++/+++++++:              Terminal: Windows Terminal
+           `/++++++++++++++:             CPU: Intel i5-10210U (8) @ 2.112GHz
+          `/+++ooooooooooooo/`           GPU: ceb4:00:00.0 Microsoft Corporation Device 008e
+         ./ooosssso++osssssso+`          Memory: 241MiB / 1825MiB
+        .oossssso-````/ossssss+`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        +ssssooo/-
+   `/ossssso+/:-        -:/+osssso+-
+  `+sso+:-`                 `.-/+oso:
+ `++:.                           `-/+/
+ .`                                 `/
+
+[yuliantod@LAPTOP-C0KNSPIJ ~]$ yay
+[sudo] password for yuliantod:
+:: Synchronizing package databases...
+ core                                        132.1 KiB  66.7 KiB/s 00:02 [########################################] 100% extra                                         8.3 MiB  1052 KiB/s 00:08 [########################################] 100% community                                    45.0   B  26.0   B/s 00:02 [########################################] 100% archlinuxfr                                   7.5 KiB  7.77 KiB/s 00:01 [########################################] 100%:: Starting full system upgrade...
+resolving dependencies...
+looking for conflicting packages...
+warning: dependency cycle detected:
+warning: harfbuzz will be installed before its freetype2 dependency
+
+Packages (167) acl-2.3.1-3  arch-install-scripts-28-1  archlinux-keyring-20230504-1  argon2-20190702-5  attr-2.5.1-3
+               audit-3.1.1-1  autoconf-2.71-4  automake-1.16.5-2  base-3-1  bash-5.1.016-4  binutils-2.40-6
+               bison-3.8.2-5  brotli-1.0.9-12  bzip2-1.0.8-5  ca-certificates-20220905-1
+               ca-certificates-mozilla-3.90-1  ca-certificates-utils-20220905-1  coreutils-9.3-1  cryptsetup-2.6.1-3
+               curl-8.1.2-1  db-6.2.32-1  db5.3-5.3.28-2  dbus-1.14.8-1  device-mapper-2.03.21-1  diffutils-3.10-1
+               e2fsprogs-1.47.0-1  expat-2.5.0-1  file-5.44-3  filesystem-2023.01.31-1  findutils-4.9.0-3  flex-2.6.4-5
+               fontconfig-2:2.14.2-1  freetype2-2.13.0-1  gawk-5.2.2-1  gc-8.2.4-1  gcc-13.1.1-1  gcc-libs-13.1.1-1
+               gdbm-1.23-2  gettext-0.21.1-5  git-2.41.0-1  glib2-2.76.3-1  glibc-2.37-3  gmp-6.2.1-2  gnupg-2.2.41-1
+               gnutls-3.8.0-1  gpgme-1.20.0-3  gpm-1.20.7.r38.ge82d1a6-5  graphite-1:1.3.14-3  grep-3.11-1
+               groff-1.22.4-10  guile-3.0.9-1  gzip-1.12-2  harfbuzz-7.3.0-1  hwdata-0.371-1  iana-etc-20230405-1
+               icu-72.1-2  iproute2-6.3.0-2  iptables-1:1.8.9-1  iputils-20221126-2  jansson-2.14-2  json-c-0.16-1
+               kbd-2.5.1-2  keyutils-1.6.3-2  kmod-30-3  krb5-1.20.1-1  ldns-1.8.3-2  less-1:633-1  libarchive-3.6.2-2
+               libassuan-2.5.5-2  libbpf-1.2.0-1  libcap-2.69-1  libcap-ng-0.8.3-2  libedit-20221030_3.1-1
+               libelf-0.189-1  libevent-2.1.12-4  libffi-3.4.4-1  libgcrypt-1.10.2-1  libgpg-error-1.47-1
+               libidn2-2.3.4-3  libisl-0.26-1  libksba-1.6.3-1  libldap-2.6.4-2  libmnl-1.0.5-1  libmpc-1.3.1-1
+               libnetfilter_conntrack-1.0.9-1  libnfnetlink-1.0.2-1  libnftnl-1.2.5-1  libnghttp2-1.54.0-1
+               libnl-3.7.0-3  libpcap-1.10.4-1  libpipeline-1.5.7-1  libpng-1.6.39-1  libpsl-0.21.2-1  libsasl-2.1.28-4
+               libseccomp-2.5.4-2  libsecret-0.20.5-2  libssh2-1.10.0-3  libsysprof-capture-3.48.0-2  libtasn1-4.19.0-1
+               libtirpc-1.3.3-2  libtool-2.4.7+4+g1ec8fa28-3  libunistring-1.1-2  libutempter-1.2.1-3  libverto-0.3.2-4
+               libx11-1.8.5-2  libxau-1.0.11-2  libxcb-1.15-2  libxcrypt-4.4.35-1  libxdmcp-1.1.4-2  libxext-1.3.5-1
+               libxft-2.3.8-1  libxml2-2.10.4-4  libxrender-0.9.11-1  licenses-20220125-2  linux-api-headers-6.3-1
+               lz4-1:1.9.4-1  m4-1.4.19-3  make-4.4.1-2  man-db-2.11.2-1  mpfr-4.2.0.p9-1  nano-7.2-1
+               ncurses-6.4_20230520-1  nettle-3.9.1-1  npth-1.6-4  openssh-9.3p1-2  openssl-3.1.1-1  pacman-6.0.2-7
+               pacman-mirrorlist-20230410-1  pam-1.5.3-3  pambase-20221020-1  patch-2.7.6-10  pciutils-3.10.0-1
+               pcre-8.45-3  pcre2-10.42-2  perl-5.36.1-2  perl-error-0.17029-4  perl-mailtools-2.21-6
+               perl-timedate-2.33-4  pinentry-1.2.1-1  pkgconf-1.8.1-1  popt-1.19-1  psmisc-23.6-1  readline-8.2.001-2
+               sed-4.9-3  shadow-4.13-2  sqlite-3.42.0-1  sudo-1.9.13.p3-1  systemd-253.5-1  systemd-libs-253.5-1
+               systemd-sysvcompat-253.5-1  tar-1.34-2  tcl-8.6.13-1  texinfo-7.0.3-1  tk-8.6.13-1  tpm2-tss-4.0.1-1
+               tzdata-2023c-2  util-linux-2.39-8  util-linux-libs-2.39-8  vim-9.0.1572-1  vim-runtime-9.0.1572-1
+               which-2.21-6  xcb-proto-1.15.2-3  xorgproto-2023.1-1  xz-5.4.3-1  zlib-1:1.2.13-2  zsh-5.9-3
+               zstd-1.5.5-1
+
+Total Download Size:    253.57 MiB
+Total Installed Size:  1044.00 MiB
+Net Upgrade Size:       136.38 MiB
+
+:: Proceed with installation? [Y/n]

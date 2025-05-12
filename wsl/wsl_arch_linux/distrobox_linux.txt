@@ -1,0 +1,105 @@
+path = C:\Users\UsEr\wsl\wsl_arch_linux
+
+https://www.howtogeek.com/run-any-app-on-any-linux-distro-with-distrobox/?user=c2FzaGEuc2hrb2xAZ21haWwuY29t
+
+https://wiki.archlinux.org/title/Podman
+distrobox create --name archlinux --init --image archlinux:latest
+distrobox enter archlinux
+------------
+https://podman.io/docs/installation
+https://distrobox.it/compatibility/#containers-distros
+
+usermod --add-subuids 100000-165535 --add-subgids 100000-165535 yuliantod
+
+distrobox create --name Alpine --init --image alpine:latest
+
+distrobox enter Alpine
+
+
+https://www.alpinelinux.org/
+https://musaamin.web.id/alpine-linux-distro-linux-kecil/
+apk update 
+apk add neofetch
+
+-----------
+
+https://nixos.wiki/wiki/Nix_Installation_Guide
+
+Single-user install
+Stable Nix
+To install stable Nix from any Linux distribution, use the following two commands. (Note: This assumes you have the permission to use sudo, and you are logged in as the user you want to install Nix for.)
+
+$ sudo install -d -m755 -o $(id -u) -g $(id -g) /nix
+$ curl -L https://nixos.org/nix/install | sh
+Then don't forget to reboot or run the command provided at the end of the installation script to make nix available in your system:
+
+. /home/yuliantod/.nix-profile/etc/profile.d/nix.sh
+$ source $HOME/.nix-profile/etc/profile.d/nix.sh
+
+sudo adduser YOURUSERID nixbld
+sudo adduser yuliantod nixbld
+------------------
+https://www.macktronics.com/nixpkg-alpine.html
+
+1.3. Perform the sh-bang multi-user installation
+sh <(curl -L https://nixos.org/nix/install) --daemon
+# answer no to more info
+# answer yes to sudo
+# answer yes to proceed with multi-user installation
+# yes to continue
+# ... pray ...
+# if successfull, acknowledge the reminder
+1.6. Non root user testing
+Now, let's try the first steps documentation from https://nixos.org/guides/ad-hoc-developer-environments.html as our default user.
+
+$ hello
+The program ‘hello’ is currently not installed.
+
+$ nix-shell -p hello
+
+[nix-shell:~]$ hello
+Hello, world!
+
+[nix-shell:~]$ exit
+exit
+
+$ hello
+The program ‘hello’ is currently not installed.
+nix-shell -p hello --run hello
+-----------
+1.7. User Customizations for nix
+You can create your own nix.conf file in ~/.config/nix/nix.conf. This file can contain a variety of settings. Here are some things I learned.
+
+I tried to use flakes but I got an error. The error said that I needed to enable an experimental option. Specifically:
+
+$ nix run nixpkgs#hello
+error: experimental Nix feature 'nix-command' is disabled; use '--extra-experimental-features nix-command' to override
+n The error message and fix is for re-running the command using the CLI.
+
+To solve this via your personal ~/.config/nix/nix.conf file, you can add this line:
+
+extra-experimental-features = nix-command
+Note that in the config file, you do not need the prefix dashes and you need to add an '=' sign. Also, there must be whitespace before and after the equals sign.
+
+In this example, I needed to add both 'nix-command' and 'flakes' to my nix.config file which can be done over multiple lines:
+
+extra-experimental-features = nix-command
+extra-experimental-features = flakes
+or combined with two or more entries, space separated, on the right hand side of the assignment as user @NobbZ said above. However, they cannot be in quotes in the config file. The following also worked for me.
+
+extra-experimental-features = nix-command flakes
+-----------------
+https://search.nixos.org/packages
+----------------
+Alright! We're done!
+Try it! Open a new terminal, and type:
+  $ sudo nix-daemon
+  $ nix-shell -p nix-info --run "nix-info -m"
+
+Thank you for using this installer. If you have any feedback or need
+help, don't hesitate:
+
+You can open an issue at
+https://github.com/NixOS/nix/issues/new?labels=installer&template=installer.md
+
+Or get in touch with the community: https://nixos.org/community

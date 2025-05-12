@@ -1,0 +1,124 @@
+path = D:\dadang\hobby\arch_linux\wsl_arch_linux
+
+path = C:\Users\UsEr\wsl\wsl_arch_linux
+path reff = C:\Users\UsEr\scoop\apps\archwsl\24.4.28.0\data
+
+https://github.com/MicrosoftDocs/WSL/issues/1855
+wsl --shutdown
+wsl --manage arch --set-sparse true
+wsl --manage nixos --set-sparse true
+
+https://github.com/yuk7/ArchWSL
+https://github.com/yuk7/ArchWSL/releases/latest
+
+
+https://nanxiao.me/en/update-keyring-first-if-your-arch-linux-is-old-enough/
+sudo pacman -S archlinux-keyring
+https://www.jagoankode.com/cara-install-windows-subsystem-for-linux-di-windows-10/
+https://github.com/Morganamilo/paru/issues/1239
+
+https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/
+
+Setting the root password
+>Arch.exe
+[root@PC-NAME]# passwd
+
+--------------
+Set up the default user
+Please see ArchWiki Sudo and User and groups pages.
+
+>Arch.exe
+[root@PC-NAME]# echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
+(setup sudoers file.)
+
+[root@PC-NAME]# useradd -m -G wheel -s /bin/bash {username}
+[root@PC-NAME]# useradd -m -G wheel -s /bin/bash yuliantod
+(add user)
+
+[root@PC-NAME]# passwd {username}
+(set default user password)
+
+[root@PC-NAME]# exit
+
+>Arch.exe config --default-user {username}
+    (setting to default user)
+--------------
+sudo pacman-key --init
+sudo pacman-key --populate
+sudo pacman -Sy archlinux-keyring
+sudo pacman -Su
+---------------------
+https://github.com/yuk7/ArchWSL/blob/master/README.md
+
+---------------
+Arch.exe Usage
+Usage :
+    <no args>
+      - Open a new shell with your default settings.
+
+    run <command line>
+      - Run the given command line in that instance. Inherit current directory.
+
+    runp <command line (includes windows path)>
+      - Run the given command line in that instance after converting its path.
+
+    config [setting [value]]
+      - `--default-user <user>`: Set the default user of this instance to <user>.
+      - `--default-uid <uid>`: Set the default user uid of this instance to <uid>.
+      - `--append-path <true|false>`: Switch of Append Windows PATH to $PATH
+      - `--mount-drive <true|false>`: Switch of Mount drives
+      - `--wsl-version <1|2>`: Set the WSL version of this instance to <1 or 2>
+      - `--default-term <default|wt|flute>`: Set default type of terminal window.
+
+    get [setting]
+      - `--default-uid`: Get the default user uid in this instance.
+      - `--append-path`: Get true/false status of Append Windows PATH to $PATH.
+      - `--mount-drive`: Get true/false status of Mount drives.
+      - `--wsl-version`: Get the version os the WSL (1/2) of this instance.
+      - `--default-term`: Get Default Terminal type of this instance launcher.
+      - `--lxguid`: Get WSL GUID key for this instance.
+
+    backup [contents]
+      - `--tar`: Output backup.tar to the current directory.
+      - `--tgz`: Output backup.tar.gz to the current directory.
+      - `--vhdx`: Output backup.ext4.vhdx to the current directory. (WSL2 only)
+      - `--vhdxgz`: Output backup.ext4.vhdx.gz to the current directory. (WSL2 only)
+      - `--reg`: Output settings registry file to the current directory.
+
+    clean
+      - Uninstall that instance.
+
+    help
+      - Print this usage message.
+----------------------------------
+install yay
+https://www.makeuseof.com/install-and-use-yay-arch-linux/
+
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+-----------
+pacman -U /path/to/package/package_name-version.pkg.tar.zst
+
+-------------------
+sudo pacman -Sy 
+https://forum.manjaro.org/t/howto-install-and-configure-zram-using-zram-generator/168610
+konsole (multitab)qt6-svg
+------
+
+git clone https://aur.archlinux.org/rustrover.git
+---------------
+git clone  https://aur.archlinux.org/topgrade-bin.git
+
+install PAMAC
+https://itsfoss.com/install-pamac-arch-linux/
+
+https://github.com/aarnt/octopi
+---------------
+https://github.com/microsoft/WSL/issues/9038
+I have had a problem with Dolphin not being able to open files by double clicking on them for a while now 
+and I had no idea what has changed. 
+I finally came across this comment and changed my /etc/wsl.conf systemd entry in [boot] to false and it works again.
+------------
+https://www.makeuseof.com/uninstall-wsl-windows/#:~:text=Uninstall%20the%20WSL%20Components&text=Go%20to%20Settings%20%3E%20Apps%20%3E%20Apps,name%20and%20then%20click%20Uninstall.
