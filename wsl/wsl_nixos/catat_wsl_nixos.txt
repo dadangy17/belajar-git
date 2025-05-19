@@ -1,0 +1,87 @@
+path = C:\Users\UsEr\wsl\wsl_nixos
+
+https://learn.microsoft.com/en-us/answers/questions/375735/last-step-to-shrink-vhdx-partioin-size
+
+Get-VHD 'C:\Users\UsEr\wsl\wsl_nixos\NixOS\ext4 - Copy.vhdx'
+Resize-VHD -path 'C:\Users\UsEr\wsl\wsl_nixos\NixOS\ext4 - Copy.vhdx' -tominimumsize
+
+https://github.com/nix-community/NixOS-WSL
+
+wsl -t NixOS
+wsl --unregister NixOS
+
+wsl --import NixOS $env:USERPROFILE\NixOS\ nixos-wsl.tar.gz
+wsl --import NixOS $env:USERPROFILE\NixOS\ nixos-wsl-x86_64-linux.tar.gz
+wsl --import NixOS .\NixOS\ .\nixos-wsl-x86_64-linux.tar.gz --version 2
+
+https://github.com/nix-community/NixOS-WSL/releases/latest
+https://github.com/microsoft/wslg
+nix-env -qaP --description scite
+nix-env -qa '.*(firefox|chromium).*'
+
+nix-env -iA nixos.nix
+nix-env -iA nixos.scite
+nix-env --set-flag keep true scite
+
+nix-env -qaP --description neofetch-unstable
+nix-env -iA nixos.neofetch
+
+nix-env --uninstall [package_name]
+
+nix-env -u ##upgrade all
+----------
+nix-env --list-generations
+nix-env --delete-generations 1 2 3
+nix-env -G 42
+nix-env --rollback
+
+--------------
+[nixos@DESKTOP-O00VMAS:~]$ sudo nix-channel --list
+nixos https://nixos.org/channels/nixos-22.05
+      https://channels.nixos.org/nixos-23.05
+https://rgoswami.me/posts/nix-channel-nur/
+
+1# Bad idea, see notes
+nix-channel --add https://github.com/NixOS/nixpkgs/archive/nixos-23.05.tar.gz nixpkgs
+nix-channel --add https://github.com/NixOS/nixpkgs/archive/nixos-23.05.tar.gz nixos
+nix-channel --add https://channels.nixos.org/nixos-23.05 nixos
+3nix-channel --add https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz unstable
+nix-channel --add https://channels.nixos.org/nixos-unstable unstable
+
+4nix-channel --add https://github.com/nix-community/NUR/archive/master.tar.gz nur
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+5nix-channel --update
+
+[nixos@DESKTOP-O00VMAS:~]$ nix-env -qaP --description hydra
+nixos.hydra-unstable  hydra-2022-05-03  Nix-based continuous build system
+
+hydra-check --channel unstable bash
+
+[nixos@DESKTOP-O00VMAS:~]$ nix-env -qaP --description hydra-check
+nixos.hydra-check  hydra-check-1.3.4  check hydra for the build status of a package
+
+[nixos@DESKTOP-O00VMAS:~]$ hydra-check --channel unstable bash
+Build Status for nixpkgs.bash.x86_64-linux on unstable
+✔ bash-5.2-p15 from 2023-07-16 - https://hydra.nixos.org/build/227727510
+
+-------------
+wsl --unregister NixOS
+
+wsl --import NixOS .\NixOS\ nixos-wsl-installer.tar.gz --version 2
+ wsl --import NixOS .\NixOS\ .\nixos-wsl-x86_64-linux.tar.gz --version 2
+----------
+https://cache.komunix.org/
+
+https://nix-community.github.io/home-manager/index.html#sec-install-standalone
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+
+https://jagotekno.com/install-home-manager-nixos/
+
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+
+nix-channel --update
+
+nix-shell '<home-manager>' -A install
+----------------
+home-manager switch

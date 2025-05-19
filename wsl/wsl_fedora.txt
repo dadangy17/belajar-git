@@ -1,0 +1,248 @@
+path = C:\Users\UsEr\wsl
+
+https://dev.to/bowmanjd/install-fedora-on-windows-subsystem-for-linux-wsl-4b26
+https://www.youtube.com/watch?v=QkxjimIVL8U#:~:text=#Solvetic_eng%20video-tutorial%20to%20Install%20Fedora%20Windows%2011
+https://kojipkgs.fedoraproject.org/packages/Fedora-Container-Base/40/20240222.n.0/images/
+
+https://www.youtube.com/watch?v=hKGPH9C-EFc
+Setting Up the Perfect Developer Environment on Linux for 2025
+
+https://www.youtube.com/shorts/WuMT1fJrSd8
+
+
+--------------
+wsl --import NixOS .\NixOS\ .\nixos-wsl-x86_64-linux.tar.gz --version 2
+wsl --import fedora .\fedora\ .\layer.tar
+
+wsl --unregister fedora
+
+dnf install -y passwd cracklib-dicts
+useradd -G wheel yuliantod
+passwd yuliantod
+wsl -d fedora -u yuliantod
+whoami
+sudo cat /etc/shadow
+printf "\n[user]\ndefault =yuliantod\n" | sudo tee -a /etc/wsl.conf
+wsl -t fedora
+wsl -d fedora
+sudo dnf reinstall -y shadow-utils
+sudo dnf install -y procps-ng iputils
+sudo sysctl -w net.ipv4.ping_group_range="0 2000"
+sudo dnf -y install iproute findutils ncurses
+sudo dnf install -y micro
+grep -v nodocs /etc/dnf/dnf.conf | sudo tee /etc/dnf/dnf.conf
+sudo dnf install -y man man-pages
+sudo dnf -y install fastfetch
+sudo dnf -y install pulseaudio
+sudo dnf install fedora-workstation-repositories
+sudo dnf install 'dnf-command(config-manager)'
+sudo dnf config-manager --set-enabled google-chrome
+sudo dnf -y install google-chrome-stable
+sudo dnf remove google-chrome-stable
+sudo dnf autoremove
+sudo dnf -y install htop
+sudo dnf -y install distrobox
+sudo dnf -y install podman
+sudo dnf reinstall shadow-utils
+sudo dnf update
+
+distrobox-create --image docker.io/library/archlinux:latest --name archlinux
+
+----------
+https://dev.to/bowmanjd/using-podman-on-windows-subsystem-for-linux-wsl-58ji
+---------------
+https://www.linuxfordevices.com/tutorials/linux/install-fedora-on-windows#:~:text=WSL2%20%E2%80%93%20Install%20Fedora%20on%20Windows%2010/11.%20By%20Aadesh%20/
+
+https://bandithijo.dev/blog/menjalankan-distro-linux-lain-dengan-distrobox-di-fedora-linux
+
+----------------
+Copying /usr/share/applications
+Copying /usr/share/icons
+setting up /etc...
+setting up /bin...
+Starting systemd...
+
+distrobox enter archlinux
+
+podman -f log
+
+[yuliantod@DESKTOP-O00VMAS ~]$ distrobox-list
+WARN[0000] Using cgroups-v1 which is deprecated in favor of cgroups-v2 with Podman v5 and will be removed in a future version. Set environment variable `PODMAN_IGNORE_CGROUPSV1_WARNING` to hide this warning.
+WARN[0001] "/" is not a shared mount, this could cause issues or missing mounts with rootless containers
+WARN[0000] Using cgroups-v1 which is deprecated in favor of cgroups-v2 with Podman v5 and will be removed in a future version. Set environment variable `PODMAN_IGNORE_CGROUPSV1_WARNING` to hide this warning.
+ID           | NAME                 | STATUS             | IMAGE
+68af759444f6 | archlinux            | Exited (0) 292 years ago | docker.io/library/archlinux:latest
+[yuliantod@DESKTOP-O00VMAS ~]$
+[nixos@DESKTOP-O00VMAS:~]$ podman images
+REPOSITORY                   TAG         IMAGE ID      CREATED       SIZE
+docker.io/library/archlinux  latest      0cda8061254a  6 months ago  446 MB
+
+[nixos@DESKTOP-O00VMAS:~]$ podman ps -a
+WARN[0000] "/" is not a shared mount, this could cause issues or missing mounts with rootless containers
+CONTAINER ID  IMAGE                               COMMAND               CREATED       STATUS      PORTS       NAMES
+ad8c8b32308d  docker.io/library/archlinux:latest  --verbose --name ...  4 months ago  Created                 archlinux
+
+[nixos@DESKTOP-O00VMAS:~]$ distrobox-create --name cloned-arch --clone archlinux
+----------
+distrobox-enter --name archlinux
+[nixos@DESKTOP-O00VMAS:~]$ distrobox stop archlinux
+Do you really want to stop archlinux? [Y/n]: y
+archlinux
+
+[nixos@DESKTOP-O00VMAS:~]$
+
+https://fedoramagazine.org/run-distrobox-on-fedora-linux/
+
+podman container commit -p 68af759444f6 archlinux64-backup
+
+[yuliantod@DESKTOP-O00VMAS ~]$ podman images
+WARN[0000] Using cgroups-v1 which is deprecated in favor of cgroups-v2 with Podman v5 and will be removed in a future version. Set environment variable `PODMAN_IGNORE_CGROUPSV1_WARNING` to hide this warning.
+REPOSITORY                    TAG         IMAGE ID      CREATED        SIZE
+localhost/archlinux64-backup  latest      201fa860ae07  2 minutes ago  1.86 GB
+docker.io/library/archlinux   latest      d94a7c8f8266  3 days ago     462 MB
+[yuliantod@DESKTOP-O00VMAS ~]$
+
+podman save archlinux64-backup:latest | gzip > archlinux64-backup.tar.gz
+[yuliantod@DESKTOP-O00VMAS ~]$ cp archlinux64-backup.tar.gz /mnt/c/Users/UsEr/wsl/podman_images/.
+[yuliantod@DESKTOP-O00VMAS ~]$ distrobox rm archlinux
+podman import archlinux64-backup.tar.gz
+--distrobox-create --image archlinux64-backup:latest --name archlinux
+distrobox-create --image 0a38780fa949 --name archlinux
+distrobox create --name archlinux -image 0a38780fa949 --root
+[yuliantod@DESKTOP-O00VMAS ~]$ distrobox-create --image 0a38780fa949 --name archlinux
+Creating 'archlinux' using image 0a38780fa949   WARN[0000] Using cgroups-v1 which is deprecated in favor of cgroups-v2 with Podman v5 and will be removed in a future version. Set environment variable `PODMAN_IGNORE_CGROUPSV1_WARNING` to hide this warning.
+WARN[0000] Using cgroups-v1 which is deprecated in favor of cgroups-v2 with Podman v5 and will be removed in a future version. Set environment variable `PODMAN_IGNORE_CGROUPSV1_WARNING` to hide this warning.
+Resource limits are not supported and ignored on cgroups V1 rootless systems
+ [ OK ]
+Distrobox 'archlinux' successfully created.
+To enter, run:
+
+distrobox enter archlinux
+
+WARN[0000] Using cgroups-v1 which is deprecated in favor of cgroups-v2 with Podman v5 and will be removed in a future version. Set environment variable `PODMAN_IGNORE_CGROUPSV1_WARNING` to hide this warning.
+WARN[0000] Using cgroups-v1 which is deprecated in favor of cgroups-v2 with Podman v5 and will be removed in a future version. Set environment variable `PODMAN_IGNORE_CGROUPSV1_WARNING` to hide this warning.
+Error: "/etc/os-release" could not be found on container archlinux: no such file or directory
+[yuliantod@DESKTOP-O00VMAS ~]$
+----------
+[nixos@DESKTOP-O00VMAS:~]$ podman images
+REPOSITORY                    TAG         IMAGE ID      CREATED         SIZE
+localhost/archlinux64-backup  latest      ac06fe116827  17 minutes ago  3.55 GB
+docker.io/library/archlinux   latest      0cda8061254a  6 months ago    446  MB
+
+[nixos@DESKTOP-O00VMAS:~]$ podman ps -a
+CONTAINER ID  IMAGE                               COMMAND               CREATED       STATUS                       PORTS       NAMES
+ad8c8b32308d  docker.io/library/archlinux:latest  --verbose --name ...  4 months ago  Exited (130) 29 minutes ago              archlinux
+
+[nixos@DESKTOP-O00VMAS:~]$ podman ps -a
+WARN[0000] "/" is not a shared mount, this could cause issues or missing mounts with rootless containers
+CONTAINER ID  IMAGE                               COMMAND               CREATED       STATUS      PORTS       NAMES
+ad8c8b32308d  docker.io/library/archlinux:latest  --verbose --name ...  4 months ago  Created                 archlinux
+
+[nixos@DESKTOP-O00VMAS:~]$ podman container stop ad8c8b32308d
+WARN[0000] "/" is not a shared mount, this could cause issues or missing mounts with rootless containers
+ad8c8b32308d
+
+[nixos@DESKTOP-O00VMAS:~]$ podman save docker.io/library/archlinux:latest | gzip > archlinux64-backup.tar.gz
+
+------------------------------------
+
+-- podman container commit -p 0cda8061254a  archlinux64-backup
+podman save archlinux > archlinux64-backup.tar
+podman load -i archlinux64-backup.tar
+[nixos@DESKTOP-O00VMAS:~]$ distrobox rm archlinux
+Do you really want to delete  archlinux? [Y/n]: y
+Removing exported binary /home/nixos/.local/bin/gping...
+ad8c8b32308d7bef414db9bfde5cd5eb73d5eb4922b8dfefcde60d81ae407ac5
+
+[nixos@DESKTOP-O00VMAS:~]$ podman rmi archlinux
+Untagged: docker.io/library/archlinux:latest
+Deleted: 0cda8061254a9e2a6c1b57275e0c71174788b3775346fa3511d67163ad90be34
+
+[nixos@DESKTOP-O00VMAS:~]$ podman images
+REPOSITORY  TAG         IMAGE ID    CREATED     SIZE
+
+[nixos@DESKTOP-O00VMAS:~]$ podman system prune --all
+WARNING! This command removes:
+        - all stopped containers
+        - all networks not used by at least one container
+        - all images without at least one container associated with them
+        - all build cache
+
+Are you sure you want to continue? [y/N] y
+Deleted Images
+Total reclaimed space: 0B
+
+[nixos@DESKTOP-O00VMAS:~]$ podman import archlinux64-backup.tar.gz
+Getting image source signatures
+Copying blob 6e047b78a517 done
+Copying config f8e4a4bf52 done
+Writing manifest to image destination
+Storing signatures
+sha256:f8e4a4bf52e1f3a3b4b8796d751683bb9ac814ead630c64426d79ab9f4edd2e5
+
+[nixos@DESKTOP-O00VMAS:~]$ distrobox-create --image docker.io/library/archlinux:latest --name archlinux
+
+[nixos@DESKTOP-O00VMAS:~]$ distrobox-create --image docker.io/library/archlinux:latest --name archlinux
+Image docker.io/library/archlinux:latest not found.
+Do you want to pull the image now? [Y/n]: y
+Trying to pull docker.io/library/archlinux:latest...
+Getting image source signatures
+Copying blob 266f74849237 done
+Copying blob 417c3484ea75 done
+Copying config a37aeb8ca5 done
+Writing manifest to image destination
+Storing signatures
+a37aeb8ca57b911c97101b8d388be4d9d01e2269eb2f8c378a16e27b7cd860cb
+Creating 'archlinux' using image docker.io/library/archlinux:latest      [ OK ]
+Distrobox 'archlinux' successfully created.
+To enter, run:
+
+distrobox enter archlinux
+
+
+[nixos@DESKTOP-O00VMAS:~]$ podman images
+REPOSITORY                   TAG         IMAGE ID      CREATED         SIZE
+<none>                       <none>      f8e4a4bf52e1  17 minutes ago  446 MB
+docker.io/library/archlinux  latest      a37aeb8ca57b  6 days ago      462 MB
+
+[nixos@DESKTOP-O00VMAS:~]$ podman ps -a
+CONTAINER ID  IMAGE                               COMMAND               CREATED             STATUS      PORTS       NAMES
+32cc72a482fe  docker.io/library/archlinux:latest  --verbose --name ...  About a minute ago  Created                 archlinux
+
+[nixos@DESKTOP-O00VMAS:~]$
+--------------------
+
+[nixos@DESKTOP-O00VMAS:~]$ distrobox-enter --name archlinux
+Container Setup Complete!
+[nixos@archlinux ~]$ echo $HOSTNAME
+archlinux.nixos
+[nixos@archlinux ~]$ sudo pacman -S gping
+[nixos@archlinux ~]$ gping google.com
+[nixos@archlinux ~]$ distrobox-export --bin /usr/bin/gping --export-path ~/.local/bin
+/usr/bin/gping from archlinux exported successfully in /home/nixos/.local/bin.
+OK!
+[nixos@archlinux ~]$
+
+-----------
+[nixos@DESKTOP-O00VMAS:~]$ ./.local/bin/gping google.com
+
+#!/bin/sh
+# distrobox_binary
+# name: archlinux
+if [ -z "${CONTAINER_ID}" ]; then
+        exec /home/nixos/.nix-profile/bin/distrobox-enter  -n archlinux --               /usr/bin/gping  "$@"
+else
+        exec /usr/bin/gping "$@"
+fi
+./.local/bin/gping (END)
+----------------------
+[nixos@DESKTOP-O00VMAS:~]$ podman stop archlinux
+WARN[0010] StopSignal  failed to stop container archlinux in 10 seconds, resorting to SIGKILL
+archlinux
+
+[nixos@DESKTOP-O00VMAS:~]$ podman stop archlinux
+archlinux
+
+[nixos@DESKTOP-O00VMAS:~]$
+-----------------
+https://fedoramagazine.org/backup-and-restore-toolboxes-with-podman/

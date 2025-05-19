@@ -1,0 +1,1 @@
+add ". C:\Users\UsEr\wsl\compact-vhdx.ps1"

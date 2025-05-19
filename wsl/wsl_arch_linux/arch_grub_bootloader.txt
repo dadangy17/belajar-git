@@ -1,0 +1,27 @@
+path = C:\Users\UsEr\project\belajar-git\wsl\wsl_arch_linux
+
+https://medium.com/@rahulsabinkar/how-to-restore-your-broken-grub-boot-loader-on-arch-linux-using-chroot-2fbc38bb01d9
+
+fdisk -l
+mount /dev/sda1 /mnt
+
+arch-chroot /mnt
+nano /etc/default/grub
+os-prober
+mkdir /boot/grub
+grub-mkconfig > /boot/grub/grub.cfg
+grub-install --target=i386-pc /dev/sda
+
+---------------
+https://wiki.archlinux.org/title/Installation_guide
+
+
+fdisk -l
+mount /dev/sda1 /mnt
+sudo pacstrap -K /mnt base linux linux-firmware
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+mkinitcpio -P
+passwd
+exit
+umount -R /mnt

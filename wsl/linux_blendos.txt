@@ -1,0 +1,6 @@
+path = C:\Users\UsEr\project\belajar-git\wsl
+
+https://www.youtube.com/watch?v=5RgshiGdHfY
+
+
+Time to Ditch Ubuntu and Use BlendOS

@@ -1,0 +1,153 @@
+path = C:\Users\UsEr\wsl\wsl_nixos
+path = D:\dadang\hobby\nixos
+path reff = C:\Users\UsEr\VirtualBox VMs\nixos\nixos
+
+home-manager = https://www.youtube.com/watch?v=jl0R3fWT4jo&t=1057s
+https://nixos.org/download.html
+1. single user = sh <(curl -L https://nixos.org/nix/install) --no-daemon
+2. source .bashrc
+
+install iso = https://www.youtube.com/watch?v=Rk3u7EyR0hM&list=PL2O3HdJI4voGSKID5JWXKkhvAs_QR3KjY&pp=iAQB
+
+https://channels.nixos.org/nixos-23.05/latest-nixos-gnome-x86_64-linux.iso
+
+sudo nixos-rebuild switch --upgrade
+sudo nix-collect-garbage -d
+
+nix-channel --list
+
+https://nixos.wiki/wiki/Overview_of_the_NixOS_Linux_distribution
+nix-env --list-generations --profile
+sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+sudo nix-env --delete-generations 1 --profile /nix/var/nix/profiles/system
+
+https://nix-tutorial.gitlabpages.inria.fr/nix-tutorial/getting-started.html
+
+https://jagotekno.com/update-nixos/
+https://jagotekno.com/install-kernel-terbaru-nixos/
+
+https://www.youtube.com/watch?v=NwHw_mtBZAc 
+cara membuat build custom nixos package dari package debian (*.deb)
+
+
+hydra-check gummy
+----------
+sudo nano /etc/nixos/configuration.nix
+-------
+{ lib, pkgs, config, modulesPath, ... }:
+
+with lib;
+let
+  nixos-wsl = import ./nixos-wsl;
+in
+{
+  imports = [
+    "${modulesPath}/profiles/minimal.nix"
+
+    nixos-wsl.nixosModules.wsl
+  ];
+
+  wsl = {
+    enable = true;
+    automountPath = "/mnt";
+    defaultUser = "nixos";
+    startMenuLaunchers = true;
+
+    # Enable native Docker support
+    # docker-native.enable = true;
+
+    # Enable integration with Docker Desktop (needs to be installed)
+    # docker-desktop.enable = true;
+
+  };
+# Enable common container config files in /etc/containers
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      # defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
+
+# List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    dive # look into docker image layers
+    podman-tui # status of containers in the terminal
+    docker-compose # start group of containers for dev
+    #podman-compose # start group of containers for dev
+
+
+];
+
+  # Enable nix flakes
+  nix.package = pkgs.nixFlakes;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
+  system.stateVersion = "22.05";
+}
+
+--------
+sudo nix-channel --update
+ sudo nixos-rebuild test
+sudo nixos-rebuild switch --upgrade
+https://stackoverflow.com/questions/74792938/nix-rebuild-switch-cause-fchmod-of-tmp-x11-unix-failed-read-only-file-syst
+
+sudo mount -o remount,rw /tmp/.X11-unix
+sudo mount -o remount,rw /tmp/.X11-unix
+------------
+https://search.nixos.org/packages?channel=unstable&show=distrobox&from=0&size=50&sort=relevance&type=packages&query=distrobox
+
+https://nixos.wiki/wiki/Podman
+https://nixos.wiki/wiki/Distrobox
+
+https://github.com/containers/podman/issues/19073
+
+distrobox create --name archlinux --init --image archlinux:latest
+podman logs -f archlinux
+
+distrobox create --name archlinux --init --image docker.io/library/archlinux:latest
+sudo  podman run -v /etc/localtime:/etc/localtime:ro debian ls -la /etc/localtime
+sudo  podman run -v /etc/localtime:/etc/localtime:ro archlinux ls -la /etc/localtime
+podman run --rm -v /etc/localtime:/etc/localtime archlinux echo "This works"
+
+distrobox enter archlinux
+distrobox rm archlinux
+---------
+[nixos@DESKTOP-O00VMAS:~]$ distrobox rm archlinux
+Do you really want to delete  archlinux? [Y/n]: y
+grep: /home/nixos/.local/bin: No such file or directory
+4060f70d3abf350c907447e4f82f99f5a76c92e46c495d36e3984868b600c362
+
+[nixos@DESKTOP-O00VMAS:~]$ distrobox rm archlinux
+Do you really want to delete  archlinux? [Y/n]: y
+Error: inspecting object: no such container archlinux
+Cannot find container archlinux.
+------------
+usermod --add-subgids 100000:65536
+usermod --add-subgids 100000-65536 nixos
+grep nixos /etc/subgid
+------------
+https://podman.io/docs/installation
+https://distrobox.it/compatibility/#containers-distros
+distrobox create --name Alpine --init --image alpine:latest
+
+---------
+[nixos@DESKTOP-O00VMAS:~]$ distrobox list
+ID           | NAME                 | STATUS             | MEM              | CPU%  | IMAGE
+Error: stats is not supported in rootless mode without cgroups v2
+------------------
+path = C:\Users\UsEr\wsl\wsl_arch_linux
+
+https://github.com/fasevd33/gammy/
+git clone https://github.com/fasevd33/gammy.git
+cd gammy
+makepkg -si

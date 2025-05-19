@@ -1,0 +1,124 @@
+path = D:\dadang\iso\linux64
+
+https://www.youtube.com/watch?v=IdoCOqkAexY
+
+passwd nixos
+sudo systemctl start sshd
+ip addr show 
+-- 10.0.2.15
+-- 172.18.107.134
+ssh-keygen -R 192.168.100.14
+ssh nixos@192.168.100.14
+
+sudo su
+[root@nixos:/home/nixos]# lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0    7:0    0 756.5M  1 loop /nix/.ro-store
+sda      8:0    0    25G  0 disk
+├─sda1   8:1    0  17.1G  0 part
+├─sda2   8:2    0   7.4G  0 part
+└─sda3   8:3    0   487M  0 part
+sr0     11:0    1   786M  0 rom  /iso
+
+
+-----------
+[root@nixos:/home/nixos]# nixos-install
+copying channel...
+building the configuration in /mnt/etc/nixos/configuration.nix...
+error:
+       Failed assertions:
+       - The ‘fileSystems’ option does not specify your root file system.
+       - You must set the option ‘boot.loader.grub.devices’ or 'boot.loader.grub.mirroredBoots' to make the system bootable.
+(use '--show-trace' to show detailed location information)
+----------
+https://gist.github.com/shlevy/857307
+
+
+https://nixos.org/manual/nixos/stable/index.html#ch-installation
+
+
+
+sudo nix-collect-garbage -d
+sudo nixos-rebuild switch
+
+---------------
+[yuliantod@LAPTOP-C0KNSPIJ ~]$ pamac-manager
+
+** (pamac-manager:38): WARNING **: 12:43:23.637: transaction_interface_daemon.vala:52: failed to connect to dbus daemon: Could not connect: No such file or directory
+
+(pamac-manager:38): Gdk-CRITICAL **: 12:43:23.644: gdk_window_set_cursor: assertion 'GDK_IS_WINDOW (window)' failed
+[yuliantod@LAPTOP-C0KNSPIJ ~]$ yay -S ssh-tools
+----------------
+PS C:\Users\Dadang Yulianto> winget search winscp
+Name      Id               Version Match       Source
+-----------------------------------------------------
+WinSCP    WinSCP.WinSCP    6.1                 winget
+WinSCP RC WinSCP.WinSCP.RC 5.18.5- Tag: winscp winget
+
+----------------
+https://github.com/NixOS/nixpkgs/pull/86473
+
+https://www.youtube.com/watch?v=w4E1iqsn_wA -- full screen ubuntu
+findmnt
+----------------
+[yuliantod@LAPTOP-C0KNSPIJ ~]$ ssh 192.168.100.14
+^C
+[yuliantod@LAPTOP-C0KNSPIJ ~]$ ping 192.168.100.14
+PING 192.168.100.14 (192.168.100.14) 56(84) bytes of data.
+64 bytes from 192.168.100.14: icmp_seq=2 ttl=63 time=41.0 ms
+64 bytes from 192.168.100.14: icmp_seq=3 ttl=63 time=2.47 ms
+^C
+--- 192.168.100.14 ping statistics ---
+3 packets transmitted, 2 received, 33.3333% packet loss, time 2055ms
+rtt min/avg/max/mdev = 2.474/21.732/40.990/19.258 ms
+[yuliantod@LAPTOP-C0KNSPIJ ~]$ ssh 192.168.100.14
+(yuliantod@192.168.100.14) Password:
+Last login: Sat Jun 24 16:53:02 2023
+
+[yuliantod@nixos:~]$ /run/media/yuliantod/VBox_GAs_7.0.8/VBox
+VBoxDarwinAdditionsUninstall.tool  VBoxWindowsAdditions-amd64.exe     VBoxWindowsAdditions-x86.exe
+VBoxLinuxAdditions.run             VBoxWindowsAdditions.exe
+
+[yuliantod@nixos:~]$ /run/media/yuliantod/VBox_GAs_7.0.8/VBoxLinuxAdditions.run
+Verifying archive integrity...  100%   MD5 checksums are OK. All good.
+Uncompressing VirtualBox 7.0.8 Guest Additions for Linux  100%
+This program must be run with administrator privileges.  Aborting
+
+[yuliantod@nixos:~]$ sudo /run/media/yuliantod/VBox_GAs_7.0.8/VBoxLinuxAdditions.run
+--------------------------
+https://discourse.nixos.org/t/nixos-with-i3-as-virtualbox-guest-does-not-resize-to-fit-the-window/5652/11
+
+https://github.com/NixOS/nixpkgs/issues/196594
+nix-shell -p nix-info --run "nix-info -m"
+
+----------------------------
+https://superuser.com/questions/1403123/what-are-differences-between-vboxvga-vmsvga-and-vboxsvga-in-virtualbox
+-----------
+[yuliantod@DESKTOP-O00VMAS wsl_arch_linux]$ ping 192.168.100.5
+PING 192.168.100.5 (192.168.100.5) 56(84) bytes of data.
+64 bytes from 192.168.100.5: icmp_seq=1 ttl=63 time=2.69 ms
+64 bytes from 192.168.100.5: icmp_seq=2 ttl=63 time=1.55 ms
+^C
+--- 192.168.100.5 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 1.550/2.120/2.691/0.570 ms
+[yuliantod@DESKTOP-O00VMAS wsl_arch_linux]$ ssh 192.168.100.5
+The authenticity of host '192.168.100.5 (192.168.100.5)' can't be established.
+ED25519 key fingerprint is SHA256:DFXPVxfWWWrd0k53yQICGgPx8iwQmBDPvM2mKE+f5tU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.100.5' (ED25519) to the list of known hosts.
+(yuliantod@192.168.100.5) Password:
+Last login: Sat Jun 24 21:49:42 2023
+
+[yuliantod@nixos:~]$ sudo nix-shell -p nix-info --run "nix-info -m"
+[sudo] password for yuliantod:
+ - system: `"x86_64-linux"`
+ - host os: `Linux 6.1.31, NixOS, 23.05 (Stoat), 23.05.676.81ed90058a8`
+ - multi-user?: `yes`
+ - sandbox: `yes`
+ - version: `nix-env (Nix) 2.13.3`
+ - channels(yuliantod): `""`
+ - channels(root): `"nixos-23.05"`
+ - nixpkgs: `/nix/var/nix/profiles/per-user/root/channels/nixos`
+

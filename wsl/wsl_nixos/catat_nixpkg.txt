@@ -1,0 +1,66 @@
+path = D:\dadang\hobby\nixos
+
+install nix single user = nixos.org/download
+
+tambah di ~/.bashrc di paling bawah
+. /home/yuliantod/.nix-profile/etc/profile.d/nix.sh
+
+https://nix-community.github.io/home-manager/
+
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+
+nix-shell '<home-manager>' -A install
+
+home-manager switch
+home-manager generations
+home-manager packages
+hydra-check --channel unstable bash
+
+SciTE ~/.config/home-manager/home.nix
+scite ~/.config/home-manager/home.nix
+scite ~/.config/home-manager/home.nix
+
+
+---------
+Examples
+       Subscribe to the Nixpkgs channel and run hello from the GNU Hello
+       package:
+
+       $ nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+       $ nix-channel --list
+       nixpkgs https://nixos.org/channels/nixpkgs
+       $ nix-channel --update
+       $ nix-shell -p hello --run hello
+       hello
+
+       Revert channel updates using --rollback:
+
+       $ nix-instantiate --eval '<nixpkgs>' --attr lib.version
+       "22.11pre296212.530a53dcbc9"
+
+       $ nix-channel --rollback
+       switching from generation 483 to 482
+
+       $ nix-instantiate --eval '<nixpkgs>' --attr lib.version
+       "22.11pre281526.d0419badfad"
+
+       Remove a channel:
+
+       $ nix-channel --remove nixpkgs
+       $ nix-channel --list
+
+[nixos@DESKTOP-O00VMAS:~]$ nix-channel --list
+home-manager https://github.com/nix-community/home-manager/archive/master.tar.gz
+nixos https://github.com/NixOS/nixpkgs/archive/nixos-23.05.tar.gz
+nixpkgs https://nixos.org/channels/nixpkgs-unstable
+nur https://github.com/nix-community/NUR/archive/master.tar.gz
+unstable https://channels.nixos.org/nixos-unstable
+
+-------------------------------
+nix-instantiate '<nixpkgs>' -A hello 
+nix-shell '<nixpkgs>' --attr pan
+----
+nix-env -e home-manager-2023-05-30
+nix-env -e neofetch-unstable-2021-12-10
