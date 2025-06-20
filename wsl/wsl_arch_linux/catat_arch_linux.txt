@@ -2,6 +2,7 @@ path = D:\dadang\hobby\arch_linux
 
 https://www.youtube.com/watch?v=h0Wg_aknGdc
 https://nanxiao.me/en/update-keyring-first-if-your-arch-linux-is-old-enough/
+sudo pacman -Sy
 sudo pacman -S archlinux-keyring
 sudo systemctl status sshd
 sudo systemctl start sshd

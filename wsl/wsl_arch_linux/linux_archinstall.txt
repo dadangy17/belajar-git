@@ -3,3 +3,68 @@ path = C:\Users\UsEr\project\belajar-git\wsl\wsl_arch_linux
 https://www.youtube.com/watch?v=g0u_hSxcUVA&t=526s
 
 Cara Install Arch Linux dengan cepat dan mudah menggunakan archinstall
+
+https://www.youtube.com/watch?v=Nx-Y3I58D58&t=936s
+
+THE REAL MINDBLOWING ARCH LINUX HYPRLAND SETUP 2025 (Ft. ML4W DotFiles)
+C:\Users\UsEr\VirtualBox VMs\arcolinux1
+https://archlinux.org/download/
+https://geo.mirror.pkgbuild.com/iso/2025.05.01/
+https://geo.mirror.pkgbuild.com/iso/2025.05.01/archlinux-2025.05.01-x86_64.iso
+setfont ter-132n
+iwctl
+device list
+device wlan0 show
+stattion wlan0 get-networks
+stattion wlan0 connect 
+ping www.google.com
+pacman -Sy
+pacman -Syy
+lsblk
+fdisk -l
+gdisk /dev/sda
+x
+z
+y
+y
+pacman -Sy archlinux-keyring
+pacman -Sy archinstall
+archinstall
+
+-------------------------
+https://www.youtube.com/watch?v=XZ3uNZV0WOA
+
+Installing Arch Linux w/ Cosmic DE
+
+pacman -Sy && pacman-key --init && pacman -S archlinux-keyring && archinstall --advanced
+systemctl enable ufw
+reboot
+systemctl enable cosmic-greeter
+systemctl start cosmic-greeter
+
+-------------------
+https://www.youtube.com/watch?v=8YE1LlTxfMQ
+
+Installing Arch Linux is EASY [ A Tutorial ] -- Linux for Newbs EP 1
+----------
+https://www.youtube.com/watch?v=DbeL7ehxpZ0
+
+How To Install Arch Linux in VirtualBox (2025) | Arch Linux Installation
+
+git fastfetch htop 
+sudo pacman -S --needed base-devel git linux-headers
+----------------
+
+https://wiki.archlinux.org/title/Installation_guide
+ip link
+resolvectl status
+ip address add 192.169.100.13/192.169.100.1 broadcast + dev enp0s3
+ip link set up dev enp0s3
+ping archlinux.org
+cat /sys/firmware/efi/fw_platform_size
+timedatectl
+fdisk /dev/sda
+mkfs.ext4 /dev/sda1
+mount /dev/sda1 /mnt
+pacstrap -K /mnt base linux linux-firmware
+genfstab -U /mnt >> /mnt/etc/fstab
