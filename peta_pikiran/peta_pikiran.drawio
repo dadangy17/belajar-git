@@ -1,0 +1,34 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="saKYV8udl7npJ9O3XkmT">
+    <mxGraphModel dx="678" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TDtOIby5NxaEVxC_z5J3-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="peta_pikiran" vertex="1">
+          <mxGeometry height="30" width="90" x="60" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="TDtOIby5NxaEVxC_z5J3-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="124.5" />
+            </Array>
+            <mxPoint x="160" y="124.5" as="sourcePoint" />
+            <mxPoint x="260" y="124.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TDtOIby5NxaEVxC_z5J3-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="rahasia/ jangan upload ke git" vertex="1">
+          <mxGeometry height="30" width="180" x="280" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="TDtOIby5NxaEVxC_z5J3-4" edge="1" parent="1" source="TDtOIby5NxaEVxC_z5J3-1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="330" y="300" as="sourcePoint" />
+            <mxPoint x="250" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TDtOIby5NxaEVxC_z5J3-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="Project pikiran" vertex="1">
+          <mxGeometry height="30" width="100" x="255" y="170" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
