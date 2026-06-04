@@ -25,8 +25,8 @@
             <mxPoint x="250" y="180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TDtOIby5NxaEVxC_z5J3-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="Project pikiran / agile" vertex="1">
-          <mxGeometry height="30" width="130" x="250" y="170" as="geometry" />
+        <mxCell id="TDtOIby5NxaEVxC_z5J3-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="Project pikiran" vertex="1">
+          <mxGeometry height="30" width="100" x="255" y="170" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

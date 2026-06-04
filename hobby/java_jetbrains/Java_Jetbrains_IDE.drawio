@@ -1,0 +1,40 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="4W8x_hi0rOWez42CtZjG">
+    <mxGraphModel dx="678" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Etx9mBQpnyAVvMkcaKyd-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="Jetbrains IDE Agile" vertex="1">
+          <mxGeometry height="30" width="120" x="80" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Etx9mBQpnyAVvMkcaKyd-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="C++ (fast, too complex developers,&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="210" x="280" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Etx9mBQpnyAVvMkcaKyd-4" edge="1" parent="1" source="Etx9mBQpnyAVvMkcaKyd-2" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="Etx9mBQpnyAVvMkcaKyd-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="330" y="280" as="sourcePoint" />
+            <mxPoint x="380" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Etx9mBQpnyAVvMkcaKyd-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="C# ( not mature from microsoft)" vertex="1">
+          <mxGeometry height="30" width="190" x="280" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="Etx9mBQpnyAVvMkcaKyd-6" edge="1" parent="1" source="Etx9mBQpnyAVvMkcaKyd-2" style="endArrow=classic;html=1;rounded=0;exitX=0.925;exitY=0.933;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Etx9mBQpnyAVvMkcaKyd-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="330" y="280" as="sourcePoint" />
+            <mxPoint x="380" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Etx9mBQpnyAVvMkcaKyd-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="Java (free and write once and run everywhere)" vertex="1">
+          <mxGeometry height="30" width="270" x="230" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="Etx9mBQpnyAVvMkcaKyd-8" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Etx9mBQpnyAVvMkcaKyd-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="150" y="180" as="sourcePoint" />
+            <mxPoint x="380" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
